@@ -15,10 +15,46 @@ const MusicalForm = () => {
     }}
   )
 
+  const handleChangeTitle = ({target}) => {
+    const { value } = target
+    setTitle(value)
+  }
+
+  const handleChangeActors = ({target}) => {
+    const { value } = target
+    setActors(value)
+  }
+
   return (
     <div>
-      <div>Hello {actors.join(', ')}</div>
-      <div>Hello {locations.Chicago.address}</div>
+      <form>
+        <div className="form-group">
+          <label htmlFor="title"> Title ?</label>
+          <input
+            onChange={handleChangeTitle}
+            id="title"
+            name="title"
+            value={title}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="actors"> Actors ?</label>
+          <input
+            onChange={handleChangeActors}
+            id="actors"
+            name="actors"
+            value={actors}
+          />
+        </div>
+
+
+      </form>
+      <h2>Title : {title} </h2>
+      <div><strong>Actors: </strong> {actors}</div>
+      <div><strong>Locations: </strong> {Object.keys(locations).map(key => {
+        return <li key={key}>{key}</li>
+      })}</div>
     </div>
 
 
