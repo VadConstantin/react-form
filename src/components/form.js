@@ -1,20 +1,18 @@
-import React, { useState} from 'react'
-import './form.css'
+import React, { useState } from 'react'
 
 const Form = () => {
-
   const [ profile, setProfile ] = useState({})
 
   const handleChange = ({target}) => {
     const { name, value } = target
-    console.log(name)
-
+    console.log(target)
     setProfile((prev) => {
       return {...prev, [name]: value}
     })
+
   }
 
-  return(
+  return (
     <div className="container">
       <form>
         <div className="form-group">
