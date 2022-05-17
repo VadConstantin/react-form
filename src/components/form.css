@@ -1,11 +1,4 @@
-input {
-  width: 90%;
-  max-width: 300px;
-  margin: 5px 5%;
-  padding: 10px;
-
-}
-
-.form {
-
+.container {
+  margin-top: 20px;
+  align-items: flex-start;
 }
